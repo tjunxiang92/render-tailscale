@@ -1,7 +1,7 @@
 services:
   - type: worker
     name: render-subnet-router
-    env: docker
+    runtime: docker
     autoDeploy: false
     envVars:
       - key: TAILSCALE_AUTHKEY
@@ -14,4 +14,3 @@ services:
       name: tailscale-state
       mountPath: /var/lib/tailscale
       sizeGB: 1
-
