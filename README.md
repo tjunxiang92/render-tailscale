@@ -19,3 +19,6 @@ Use the button below to deploy a Tailscale subnet router on Render. [Generate a 
 ## Usage
 Deploying this repo will create a subnet router in your Tailscale network. The first time you deploy, you'll need to [enable the subnet routes](https://tailscale.com/kb/1019/subnets/#step-3-enable-subnet-routes-from-the-admin-panel) you want access to from the Tailscale admin panel. Once the subnet router is up and running, you can connect to other private services in your Render network. To find the internal IP address for a Render private service, go to the web shell for your subnet router service and run `dig` with the [private service's host name](https://render.com/docs/private-services#connecting-to-a-private-service) as the only argument.
 
+```
+render ssh {render_host_name} -- dig {private_service_host_name}
+```
